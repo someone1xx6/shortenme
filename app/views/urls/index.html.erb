@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+  		<div class="col-md-6 col-md-offset-3">
+  			<h1> Simplify your link! </h2>
+			<h4> Paste your url in the box below and hit enter </h4>
+			<%= form_for :shorten, url: '/urls/create', :html => {:class => 'text-center'} do |f| %>
+			  <p>
+			    <%= f.text_field :original_url, class: "form-control" %> 
+			  </p>
+
+			  <p>
+			    <%= f.submit :Shorten, class: "btn btn-primary" %>
+			  </p>
+			<% end %>
+  		</div>
+	</div>
+	
+	
+</div>

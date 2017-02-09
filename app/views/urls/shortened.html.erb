@@ -1,0 +1,49 @@
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
+<div class="container">
+	<h3> Well done, your link has been shortened! </h3>
+	<h3> Share it now! </h3>
+
+	<div class="row">
+		<div class="col-md-6">
+			<%= form_for :shortened do |f| %>
+	  			<fieldset disabled>
+				  <p>
+				  	<%= f.label :your_original_url %><br>
+				    <%= f.text_field :original_url, class: "form-control disable", value: "#{@url.original_url}" %> 
+				  </p>
+				  </fieldset>
+				<% end %>
+		</div>
+		<div class="col-md-6">
+  			<h1> QR Code </h1>
+  		</div>
+	</div>
+
+	<div class="row">
+
+  		<div class="col-md-6">
+  			<h1> Your shorten URL: </h1>
+			<h1> <%= "http:/localhost:3000/" + @url.short_url %> </h1>
+  		</div>
+
+  		<div class="col-md-4 col-md-offset-2">
+  			<%= raw @qr.as_html%>
+  		</div>
+
+	</div>
+	
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h1> Analytics data </h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<%= Visit.where(landing_page: "http://localhost:3000/Iu2434+").count %>
+		<%= line_chart Visit.where(landing_page: "http://localhost:3000/Iu2434+").group_by_day(:started_at).count %>
+		<%= geo_chart Visit.group(:country).count %>
+
+	</div>
+	
+</div>
