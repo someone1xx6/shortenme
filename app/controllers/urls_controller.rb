@@ -22,6 +22,7 @@ class UrlsController < ApplicationController
   	@url.save
 
 	   #redirect_to "https://#{ENV["BASE_URL"]}#{@url.short_url}"+'+'
+     redirect_to "https://google.com"
   end
 
   def find_url
