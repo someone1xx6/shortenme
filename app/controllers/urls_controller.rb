@@ -13,7 +13,7 @@ class UrlsController < ApplicationController
   	else
 	  	@u = ENV["BASE_URL"]+@url.original_url
 	  	ahoy.track_visit
-		  redirect_to ENV["BASE_URL"]
+		  redirect_to @u
 	end
   end
 
