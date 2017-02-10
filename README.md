@@ -8,6 +8,7 @@ Ruby 2.4.0
 # INSTALLATION GUIDE
 Run the following command:
 
+```
 git clone https://github.com/someone1xx6/shortenme.git
 
 bundle install
@@ -19,6 +20,10 @@ rails generate ahoy:stores:active_record
 rails db:migrate
 
 rails s
+
+```
+
+
 
 
 
