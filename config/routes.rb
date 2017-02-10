@@ -7,5 +7,4 @@ Rails.application.routes.draw do
   get 'urls/index'
   post 'urls/create'
   #get '/:id' => "shortener/shortened_urls#show"
-  
 end
