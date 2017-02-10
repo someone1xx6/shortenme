@@ -21,8 +21,7 @@ class UrlsController < ApplicationController
   	@url = Url.new(params.require(:shorten).permit(:original_url))
   	@url.save
 
-	redirect_to "#{ENV["BASE_URL"]}#{@url.short_url}"+'+'
-	#Shortener::ShortenedUrl.generate(params[:shorten][:original_url])
+	   redirect_to "#{ENV["BASE_URL"]}#{@url.short_url}"+'+'
   end
 
   def find_url
