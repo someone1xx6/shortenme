@@ -19,10 +19,10 @@ class UrlsController < ApplicationController
 
   def create
   	@url = Url.new(params.require(:shorten).permit(:original_url))
-  	#@url.save
+  	@url.save
 
-	   #redirect_to "https://#{ENV["BASE_URL"]}#{@url.short_url}"+'+'
-     redirect_to "https://google.com"
+	   redirect_to "https://#{ENV["BASE_URL"]}#{@url.short_url}+"
+     #redirect_to "https://google.com"
   end
 
   def find_url
