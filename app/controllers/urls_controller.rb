@@ -11,7 +11,7 @@ class UrlsController < ApplicationController
   		#ahoy.track_visit
   		render "shortened"
   	else
-	  	@u = "https://#{@url.original_url}"
+	  	@u = "http://#{@url.original_url}"
 	  	ahoy.track_visit
 		  redirect_to @u
 	end
@@ -21,7 +21,7 @@ class UrlsController < ApplicationController
   	@url = Url.new(params.require(:shorten).permit(:original_url))
   	@url.save
 
-	   redirect_to "https://#{ENV["BASE_URL"]}#{@url.short_url}+"
+	   redirect_to "http://#{ENV["BASE_URL"]}#{@url.short_url}+"
   end
 
   def find_url
