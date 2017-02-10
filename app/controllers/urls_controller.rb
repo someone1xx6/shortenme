@@ -13,7 +13,7 @@ class UrlsController < ApplicationController
   	else
 	  	@u = ENV["BASE_URL"]+@url.original_url
 	  	ahoy.track_visit
-		redirect_to ENV["BASE_URL"]
+		  redirect_to ENV["BASE_URL"]
 	end
   end
 
@@ -22,7 +22,6 @@ class UrlsController < ApplicationController
   	@url.save
 
 	   redirect_to "https://#{ENV["BASE_URL"]}#{@url.short_url}+"
-     #redirect_to "https://google.com"ymchdgffv v tyjhbv
   end
 
   def find_url
