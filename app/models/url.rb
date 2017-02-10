@@ -8,6 +8,5 @@ class Url < ApplicationRecord
     	short_url = 4.times.map{chars.sample}.join
     	short_url = short_url + self.id.to_s(36)
     	self.update_attributes(:short_url=>short_url)
-    	
 	end
 end

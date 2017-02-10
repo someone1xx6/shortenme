@@ -40,7 +40,7 @@
 	<div class="row">
 		<%= Visit.where(landing_page: "http://#{ENV["BASE_URL"]}#{@url.short_url}").count %>
 		<%= line_chart Visit.where(landing_page: "http://#{ENV["BASE_URL"]}#{@url.short_url}").group_by_day(:started_at).count %>
-		<%= geo_chart Visit.group(:country).count %>
+		<%= geo_chart Visit.where(landing_page: "http://#{ENV["BASE_URL"]}#{@url.short_url}").group(:country).count %>
 
 	</div>
 	
