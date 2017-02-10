@@ -18,7 +18,7 @@ class UrlsController < ApplicationController
   end
 
   def create
-  	#@url = Url.new(params.require(:shorten).permit(:original_url))
+  	@url = Url.new(params.require(:shorten).permit(:original_url))
   	#@url.save
 
 	   #redirect_to "https://#{ENV["BASE_URL"]}#{@url.short_url}"+'+'
