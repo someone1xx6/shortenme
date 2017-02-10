@@ -13,4 +13,3 @@ module Shortenme
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-config.serve_static_assets = true
