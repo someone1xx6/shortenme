@@ -3,6 +3,7 @@ class UrlsController < ApplicationController
   before_action :sanitize, only: [:create]
 
   def index
+    Ahoy.cookie_domain = :all
   end
 
   def show
@@ -11,7 +12,7 @@ class UrlsController < ApplicationController
   		render "shortened"
   	else
 	  	@u = "http://#{@url.original_url}"
-	  	ahoy.track_visit
+	  	ahoy.track "#{@url.short_url}"
 		  redirect_to @u
 	end
   end
@@ -26,6 +27,7 @@ class UrlsController < ApplicationController
   	short_url = params[:short_url]
   	@url = Url.find_by_short_url(short_url.delete "+")
   	@qr = RQRCode::QRCode.new( ENV["BASE_URL"]+@url.short_url, :size => 5, :level => :h )
+    ahoy.track_visit
   end
 
   def sanitize

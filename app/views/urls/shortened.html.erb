@@ -1,6 +1,7 @@
 <div class="container">
-	<h3> Well done, your link has been shortened! </h3>
-	<h3> Share it now! </h3>
+	<h3>
+		<span class="label label-success"> Your link has been shortened! </span> 
+	</h3>
 
 	<div class="row">
 		<div class="col-md-6">
@@ -38,10 +39,6 @@
 	</div>
 
 	<div class="row">
-		<%= Visit.where(landing_page: "http://#{ENV["BASE_URL"]}#{@url.short_url}").count %>
-		<%= line_chart Visit.where(landing_page: "http://#{ENV["BASE_URL"]}#{@url.short_url}").group_by_day(:started_at).count %>
-		<%= geo_chart Visit.where(landing_page: "http://#{ENV["BASE_URL"]}#{@url.short_url}").group(:country).count %>
-
+		<%= line_chart Ahoy::Event.where(name: "#{@url.short_url}").group_by_day(:time).count()%>
 	</div>
-	
 </div>
