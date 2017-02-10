@@ -8,7 +8,7 @@ class UrlsController < ApplicationController
 
   def show
   	if(params[:short_url][-1]=='+') then
-  		ahoy.track_visit
+  		#ahoy.track_visit
   		render "shortened"
   	else
 	  	@u = ENV["BASE_URL"]+@url.original_url
@@ -22,7 +22,7 @@ class UrlsController < ApplicationController
   	@url.save
 
 	   redirect_to "https://#{ENV["BASE_URL"]}#{@url.short_url}+"
-     #redirect_to "https://google.com"
+     #redirect_to "https://google.com"ymchdgffv v tyjhbv
   end
 
   def find_url
