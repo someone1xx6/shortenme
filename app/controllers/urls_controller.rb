@@ -11,7 +11,7 @@ class UrlsController < ApplicationController
   		ahoy.track_visit
   		render "shortened"
   	else
-	  	@u = "http://" + @url.original_url
+	  	@u = ENV["BASE_URL"]+@url.original_url
 	  	ahoy.track_visit
 		redirect_to @u
 	end
