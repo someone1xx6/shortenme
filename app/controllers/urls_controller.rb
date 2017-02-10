@@ -28,7 +28,7 @@ class UrlsController < ApplicationController
   def find_url
   	short_url = params[:short_url]
   	@url = Url.find_by_short_url(short_url.delete "+")
-  	@qr = RQRCode::QRCode.new( ENV["BASE_URL"]+@url.short_url, :size => 4, :level => :h )
+  	@qr = RQRCode::QRCode.new( ENV["BASE_URL"]+@url.short_url, :size => 6, :level => :h )
   end
 
 end
