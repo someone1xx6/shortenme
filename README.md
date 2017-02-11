@@ -20,7 +20,7 @@ Ruby 2.4.0
 - Generate shorten link and QR code from user's URL
 
 - Redirect to original link when user input the shorten link
-U
+
 - Provide simple analytics data with total hits, visualize using line chart
 
 # INSTALLATION GUIDE
