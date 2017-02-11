@@ -5,11 +5,22 @@ Deployed app: [here](https://blooming-reef-94267.herokuapp.com)!
 Rails 5.0.1
 Ruby 2.4.0
 
+# LIBARY:
+- Ahoy : Track visits to shorten links
+
+- RQR : Generate QR code
+
+- Figaro: Evironment variable for storing BASE_URL
+
+- Chartkick: Visualize data
+
+- Bootstrap: Front-end
+
 # FEATURES:
 - Generate shorten link and QR code from user's URL
 
 - Redirect to original link when user input the shorten link
-
+U
 - Provide simple analytics data with total hits, visualize using line chart
 
 # INSTALLATION GUIDE
@@ -32,6 +43,15 @@ rails s
 
 ```
 
+## To do:
+
+- Tracking traffic with location, referral links.
+
+- Restrict duplicate url to be shorten
+
+- Generate short url without calling additional query
+
+- Rest API support
 
 
 
