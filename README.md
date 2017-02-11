@@ -5,7 +5,7 @@ Deployed app: [here](https://blooming-reef-94267.herokuapp.com)!
 Rails 5.0.1
 Ruby 2.4.0
 
-# LIBARY:
+# LIBRARY:
 - Ahoy : Track visits to shorten links
 
 - RQR : Generate QR code
@@ -53,7 +53,7 @@ rails s
 
 - Rest API support
 
-
+- Improve UI/UX
 
 
 
